@@ -1,18 +1,21 @@
-## Getting Started
+# Graph Tools
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## A collection of useful tools for Graphs.
 
-## Folder Structure
+## What's This?
 
-The workspace contains two folders by default, where:
+The objective of the GraphTools repository is to contain useful classes related to Graphs / Matrices.
+The classes are related to my personal work, and I felt it would be nice to keep them separate and publicly available should anyone else be interested. 
+I guarantee that 99% of the stuff in this repository will probably be useless to you but nethertheless if I did help someone out I would feel immensely proud of myself.
+I am not, and have never claimed to be, a good programmer, but I do take pride in making my work as clean and easy to follow as possible however.
+I would not be surprised if I made any mistakes or took questionnable actions/decisions whilst working on these tools. 
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Prerequesites
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+I try my best to avoid using external dependencies and JARs if I can avoid it. I am the sort of person who likes to challenge themselves to reverse engineer libraries, and figure out how to do it themselves. With this said however I will adknowledge that in most cases, it's easier to not reinvent the wheel. 
+If I do end up surrendering and using External Libraries, I will make a list of them below for you to check out for yourself:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## How to use
 
-## Dependency Management
+Since I am rather inexperienced in Maven and other Dependency Tools, the best way for you to use these tools at the moment is to simply clone the repository, and use what you desire. As I said before it's often easier to not reinvent the wheel so if any of the code here is helpful to you please feel free to make whatever modifications like! If I did provide you with something useful and/or you took it a step further to improve it I would love to know more about it!
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
