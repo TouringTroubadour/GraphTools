@@ -75,4 +75,65 @@ public class MatrixTools {
 
         return clone;
     }
+
+    /**
+     * 
+     * @param <T>
+     * @param matrix
+     * @return
+     */
+    public static <T extends Number> double[][] getFloydWarshallDistances(T[][] matrix) {
+        int size = matrix.length;
+        double[][] distances = initializeDistances(matrix);
+        applyFloydWarshallAlgorithm(distances, size);
+        return distances;
+    }
+    
+    /**
+     * 
+     * @param <T>
+     * @param matrix
+     * @return
+     */
+    private static <T extends Number> double[][] initializeDistances(T[][] matrix) {
+        int size = matrix.length;
+        double[][] distances = new double[size][size];
+    
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                distances[i][j] = getDistanceValue(matrix[i][j]);
+            }
+        }
+    
+        return distances;
+    }
+    
+    /**
+     * 
+     * @param <T>
+     * @param value
+     * @return
+     */
+    private static <T extends Number> double getDistanceValue(T value) {
+        return (value.doubleValue() == 0) ? Double.POSITIVE_INFINITY : value.doubleValue();
+    }
+    
+    /**
+     * 
+     * @param distances
+     * @param size
+     */
+    private static void applyFloydWarshallAlgorithm(double[][] distances, int size) {
+        for (int k = 0; k < size; k++) {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    if (distances[i][k] + distances[k][j] < distances[i][j]) {
+                        distances[i][j] = distances[i][k] + distances[k][j];
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
