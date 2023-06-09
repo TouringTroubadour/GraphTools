@@ -4,13 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * 
  */
-public class MatrixReader<T> {
+public class MatrixReader {
+
+    private MatrixReader() {
+
+    }
 
     /**
      * 
@@ -90,14 +93,5 @@ public class MatrixReader<T> {
         // Add support for other element types as needed
         return null;
     }
-
-    public static void main(String[] args) {
-        Double[][] matrix = readMatrixFromFile("matrix.txt", ",", double.class);
-        if (matrix != null) {
-            System.out.println("Matrix:");
-            for (Double[] row : matrix) {
-                System.out.println(Arrays.toString(row));
-            }
-        }
-    }
+    
 }

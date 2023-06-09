@@ -16,6 +16,16 @@ import javax.imageio.ImageIO;
  */
 public class MatrixVisualizer {
 
+    private MatrixVisualizer() {
+
+    }
+
+    /**
+     * 
+     * @param matrix
+     * @param scale
+     * @param outputFilePath
+     */
     public static void visualizeGraph(double[][] matrix, int scale, String outputFilePath) {
         int size = matrix.length;
         int imageSize = size * scale;
@@ -62,6 +72,11 @@ public class MatrixVisualizer {
         }
     }
 
+    /**
+     * 
+     * @param value
+     * @return
+     */
     private static Color getColor(double value) {
         if (value == 0) {
             return Color.BLACK;
@@ -70,6 +85,11 @@ public class MatrixVisualizer {
         }
     }
 
+    /**
+     * 
+     * @param backgroundColor
+     * @return
+     */
     private static Color getTextColor(Color backgroundColor) {
         if (backgroundColor == Color.BLACK) {
             return Color.WHITE;
@@ -78,6 +98,13 @@ public class MatrixVisualizer {
         }
     }
 
+    /**
+     * 
+     * @param g2d
+     * @param text
+     * @param rect
+     * @param font
+     */
     private static void drawCenteredString(Graphics2D g2d, String text, Rectangle rect, Font font) {
         FontMetrics metrics = g2d.getFontMetrics(font);
         int x = rect.x + (rect.width - metrics.stringWidth(text)) / 2;

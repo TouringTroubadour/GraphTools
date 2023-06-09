@@ -9,6 +9,11 @@ import java.io.PrintWriter;
  * 
  */
 public class MatrixWriter {
+
+    private MatrixWriter() {
+
+    }
+
     /**
      * 
      * @param <T>

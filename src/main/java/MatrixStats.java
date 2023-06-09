@@ -8,12 +8,17 @@ import java.util.List;
  */
 public class MatrixStats {
 
+    private MatrixStats() {
+
+    }
+
     /**
      * 
      * @param <T>
      * @param matrix
      * @return
      */
+    @SuppressWarnings("unchecked")
     public static <T> List<T> getNumberOfVertices(T[][] matrix) {
         List<T> vertices = new ArrayList<>();
         int size = matrix.length;

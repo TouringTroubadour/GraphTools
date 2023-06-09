@@ -2,15 +2,20 @@ package main.java;
 
 import java.util.Arrays;
 
-/** 
+/**
  * Matrix Tools
  * A collection of useful methods related to Graphs
-*/
+ */
 public class MatrixTools {
+
+    private MatrixTools() {
+
+    }
 
     /**
      * Ouput Matrix in Console.
      * Warning, doesn't work very well with large matrices.
+     * 
      * @param matrix
      */
     public static void printMatrix(double[][] matrix) {

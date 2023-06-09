@@ -3,12 +3,17 @@ package main.java;
 /**
  * PerfectMatrices
  * 
- * This class produces "Perfect" Graphs. 
+ * This class produces "Perfect" Graphs.
  * We define these as "Fully Connected" Sub-Graphs within a parent Graph
  * 
- * This is useful for experimenting with Fiedler Vectors and other concepts in Graph Theory.
+ * This is useful for experimenting with Fiedler Vectors and other concepts in
+ * Graph Theory.
  */
 public class PerfectMatrices {
+
+    private PerfectMatrices() {
+
+    }
 
     /**
      * 
@@ -49,16 +54,16 @@ public class PerfectMatrices {
      */
     private static double[][] createLargeGraph(int size, double[][] smallGraph, int numGraphs) {
         validateParameters(size, smallGraph.length, numGraphs);
-    
+
         double[][] graph = initializeGraph(size);
-    
+
         appendSmallGraphs(graph, smallGraph);
         connectSmallGraphs(graph, smallGraph);
         addAdditionalGraphs(graph, smallGraph, numGraphs);
-    
+
         return graph;
     }
-    
+
     /**
      * 
      * @param size
@@ -70,7 +75,7 @@ public class PerfectMatrices {
             throw new IllegalArgumentException("Invalid size or number of graphs");
         }
     }
-    
+
     /**
      * 
      * @param size
@@ -81,7 +86,7 @@ public class PerfectMatrices {
         double[][] graph = new double[size][size];
         return graph;
     }
-    
+
     /**
      * 
      * @param graph
@@ -89,7 +94,7 @@ public class PerfectMatrices {
      */
     private static void appendSmallGraphs(double[][] graph, double[][] smallGraph) {
         int smallGraphSize = smallGraph.length;
-    
+
         for (int i = 0; i < graph.length; i += smallGraphSize) {
             for (int j = 0; j < smallGraphSize; j++) {
                 for (int k = 0; k < smallGraphSize; k++) {
@@ -98,7 +103,7 @@ public class PerfectMatrices {
             }
         }
     }
-    
+
     /**
      * 
      * @param graph
@@ -107,13 +112,13 @@ public class PerfectMatrices {
     private static void connectSmallGraphs(double[][] graph, double[][] smallGraph) {
         int smallGraphSize = smallGraph.length;
         int numGraphs = graph.length / smallGraphSize;
-    
+
         for (int i = 0; i < numGraphs - 1; i++) {
             graph[(i + 1) * smallGraphSize - 1][i * smallGraphSize] = 1;
             graph[i * smallGraphSize][(i + 1) * smallGraphSize - 1] = 1;
         }
     }
-    
+
     /**
      * 
      * @param graph
@@ -122,21 +127,20 @@ public class PerfectMatrices {
      */
     private static void addAdditionalGraphs(double[][] graph, double[][] smallGraph, int numGraphs) {
         int smallGraphSize = smallGraph.length;
-    
+
         for (int i = 0; i < numGraphs - 1; i++) {
             int start = smallGraphSize + (i * smallGraphSize);
             int end = start + smallGraphSize;
-    
+
             for (int j = start; j < end; j++) {
                 for (int k = start; k < end; k++) {
                     graph[j][k] = smallGraph[j - start][k - start];
                 }
             }
-    
+
             graph[end - 1][start] = 1;
             graph[start][end - 1] = 1;
         }
     }
-    
 
 }
