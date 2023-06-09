@@ -39,6 +39,8 @@ There is a brief summary of the classes so far:
   * Class containing "Perfect Matrices" related methods.
 * MatrixVisualizer
   * Class containing Image Generating methods.
+* MatrixDFS
+  * Class containing DepthFirstSearch and related methods.
 
 ## What's coming down the pipeline?
 
