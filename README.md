@@ -38,7 +38,7 @@ There is a brief summary of the classes so far:
 * PerfectMatrices
   * Class containing "Perfect Matrices" related methods.
 * MatrixVisualizer
-  * Clalss containing Image Generating methods.
+  * Class containing Image Generating methods.
 
 ## What's coming down the pipeline?
 
