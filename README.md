@@ -23,20 +23,22 @@ Since I am rather inexperienced in Maven and other Dependency Tools, the best wa
 
 There is a brief summary of the classes so far:
 
-* MatrixConverter
-  * Class containing conversion related methods.
 * MatrixReader
   * Class containing file reading related methods.
+* MatrixWriter
+  * Class contaiing file writing related methods.
+* MatrixConverter
+  * Class containing conversion related methods.
 * MatrixStats
   * Class containing Matrix Statistics related methods.
 * MatrixTools
   * Class containing generic Matrix related methods.
 * MatrixValidator
   * Class containing Matrix Validation related methods.
-* MatrixWriter
-  * Class contaiing file writing related methods.
 * PerfectMatrices
   * Class containing "Perfect Matrices" related methods.
+* MatrixVisualizer
+  * Clalss containing Image Generating methods.
 
 ## What's coming down the pipeline?
 

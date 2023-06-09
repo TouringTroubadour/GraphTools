@@ -17,21 +17,22 @@ public class MatrixConverter {
     public static <T> T[][] toWrapperMatrix(Object primitiveMatrix, Class<T> wrapperClass) {
         int numRows = Array.getLength(primitiveMatrix);
         int numCols = Array.getLength(Array.get(primitiveMatrix, 0));
-
+    
         try {
             T[][] wrapperMatrix = (T[][]) Array.newInstance(wrapperClass, numRows, numCols);
-
+    
             for (int i = 0; i < numRows; i++) {
                 for (int j = 0; j < numCols; j++) {
                     Array.set(wrapperMatrix[i], j, Array.get(Array.get(primitiveMatrix, i), j));
                 }
             }
-
+    
             return wrapperMatrix;
         } catch (ClassCastException e) {
             throw new IllegalArgumentException("Unable to cast primitive matrix to wrapper matrix", e);
         }
     }
+    
 
     /**
      * 
