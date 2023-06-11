@@ -28,25 +28,26 @@ src/
 main/
   java/
     clustering/
-      HierarchicalClustering.java
+      HierarchicalClustering.java (Implementation of Heirarchical Clustering)
     conversion/
-      MatrixConversion.java
+      MatrixConversion.java (Implementation of Matrix Conversion algorithms e.g. Adjacency to Laplaccian or Hessenberg)
     generators/
-      DistanceMatrixGenerator.java
-      PerfectMatrixGenerator.java
+      DistanceMatrixGenerator.java (Implementation of algorithm for creating randomised Distance Matrices)
+      PerfectMatrixGenerator.java (Implementation of algorithm for creating Fully-Connected Sub-Matrices) 
     io/
-      MatrixReader.java
-      MatrixWriter.java
+      MatrixReader.java (Implementation of reading double[][] matrices from text files)
+      MatrixWriter.java (Implementation of exporting matrices to text or dot files)
     statistics/
-      MatrixStatistics.java
+      MatrixStatistics.java (Implementation of various methods for gathering statistics on matrices)
     transformation/
-      MatrixTransformation.java
+      MatrixTransformation.java (Implementation of various Matrix transformation methods (not to be confused with Conversions))
     traversal/
-      DepthFirstSearch.java
+      DepthFirstSearch.java (Implementation of DepthFirstSearch)
+      PrimMST.java (Implementation of Prim's MST)
     utils/
-      MatrixTools.java
-      MatrixValidator.java
-      MatrixVisualizer.java
+      MatrixTools.java (Implementation of various tools relating to Matrices e.g. Console Output, FloydWarshall Distances, etc)
+      MatrixValidator.java (Implementation of various methods for validating Matrices)
+      MatrixVisualizer.java (Implementation of basic Image Visualization of Matrices)
 ```
 
 ## What's coming down the pipeline?
