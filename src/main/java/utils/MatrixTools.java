@@ -1,4 +1,4 @@
-package main.java;
+package main.java.utils;
 
 import java.util.Arrays;
 
@@ -15,7 +15,7 @@ public class MatrixTools {
     /**
      * Ouput Matrix in Console.
      * Warning, doesn't work very well with large matrices.
-     * 
+     *
      * @param matrix
      */
     public static void printMatrix(double[][] matrix) {
@@ -31,7 +31,6 @@ public class MatrixTools {
     }
 
     /**
-     * 
      * @param matrix
      * @return
      */
@@ -53,73 +52,42 @@ public class MatrixTools {
     }
 
     /**
-     * 
-     * @param <T>
      * @param matrix
      * @return
      */
-    public static <T> T[][] deepClone(T[][] matrix) {
-        if (matrix == null) {
-            return null;
-        }
-
-        int numRows = matrix.length;
-        int numCols = matrix[0].length;
-
-        @SuppressWarnings("unchecked")
-        T[][] clone = (T[][]) new Object[numRows][numCols];
-
-        for (int i = 0; i < numRows; i++) {
-            clone[i] = Arrays.copyOf(matrix[i], numCols);
-        }
-
-        return clone;
-    }
-
-    /**
-     * 
-     * @param <T>
-     * @param matrix
-     * @return
-     */
-    public static <T extends Number> double[][] getFloydWarshallDistances(T[][] matrix) {
+    public static double[][] getFloydWarshallDistances(double[][] matrix) {
         int size = matrix.length;
         double[][] distances = initializeDistances(matrix);
         applyFloydWarshallAlgorithm(distances, size);
         return distances;
     }
-    
+
     /**
-     * 
-     * @param <T>
      * @param matrix
      * @return
      */
-    private static <T extends Number> double[][] initializeDistances(T[][] matrix) {
+    private static double[][] initializeDistances(double[][] matrix) {
         int size = matrix.length;
         double[][] distances = new double[size][size];
-    
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 distances[i][j] = getDistanceValue(matrix[i][j]);
             }
         }
-    
+
         return distances;
     }
-    
+
     /**
-     * 
-     * @param <T>
      * @param value
      * @return
      */
-    private static <T extends Number> double getDistanceValue(T value) {
-        return (value.doubleValue() == 0) ? Double.POSITIVE_INFINITY : value.doubleValue();
+    private static double getDistanceValue(double value) {
+        return (value == 0) ? Double.POSITIVE_INFINITY : value;
     }
-    
+
     /**
-     * 
      * @param distances
      * @param size
      */
@@ -134,6 +102,33 @@ public class MatrixTools {
             }
         }
     }
-    
-    
+
+    /**
+     * Example usage of MatrixTools class.
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        double[][] matrix = {
+                { 0, 1, 3, 0 },
+                { 1, 0, 0, 2 },
+                { 3, 0, 0, 4 },
+                { 0, 2, 4, 0 }
+        };
+
+        System.out.println("Original Matrix:");
+        printMatrix(matrix);
+
+        double[][] clonedMatrix = deepClone(matrix);
+        clonedMatrix[0][1] = 5;
+
+        System.out.println("\nCloned Matrix:");
+        printMatrix(clonedMatrix);
+
+        double[][] distances = getFloydWarshallDistances(matrix);
+
+        System.out.println("\nShortest Distances Matrix:");
+        printMatrix(distances);
+    }
+
 }

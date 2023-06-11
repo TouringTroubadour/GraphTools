@@ -1,4 +1,4 @@
-package main.java;
+package main.java.utils;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -12,7 +12,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * 
+ * Utility class for visualizing a matrix as a graph.
  */
 public class MatrixVisualizer {
 
@@ -21,12 +21,14 @@ public class MatrixVisualizer {
     }
 
     /**
-     * 
-     * @param matrix
-     * @param scale
-     * @param outputFilePath
+     * Visualizes the given matrix as a graph and saves it to an image file.
+     *
+     * @param matrix                 The matrix to visualize.
+     * @param scale                  The scale factor for node size.
+     * @param outputFilePath         The path of the output image file.
+     * @param highlightLeadingDiagonal Determines whether to highlight the leading diagonal elements.
      */
-    public static void visualizeGraph(double[][] matrix, int scale, String outputFilePath) {
+    public static void visualizeGraph(double[][] matrix, int scale, String outputFilePath, boolean highlightLeadingDiagonal) {
         int size = matrix.length;
         int imageSize = size * scale;
         BufferedImage image = new BufferedImage(imageSize, imageSize, BufferedImage.TYPE_INT_RGB);
@@ -45,7 +47,7 @@ public class MatrixVisualizer {
                 int x = j * scale;
                 int y = i * scale;
                 Color color;
-                if (i == j) {
+                if (i == j && highlightLeadingDiagonal) {
                     color = Color.RED; // Leading diagonal
                 } else {
                     color = getColor(matrix[i][j]);
@@ -72,10 +74,12 @@ public class MatrixVisualizer {
         }
     }
 
+
     /**
-     * 
-     * @param value
-     * @return
+     * Determines the color for a node based on its value.
+     *
+     * @param value The value of the node.
+     * @return The color for the node.
      */
     private static Color getColor(double value) {
         if (value == 0) {
@@ -86,9 +90,10 @@ public class MatrixVisualizer {
     }
 
     /**
-     * 
-     * @param backgroundColor
-     * @return
+     * Determines the text color based on the background color.
+     *
+     * @param backgroundColor The background color.
+     * @return The text color.
      */
     private static Color getTextColor(Color backgroundColor) {
         if (backgroundColor == Color.BLACK) {
@@ -99,16 +104,34 @@ public class MatrixVisualizer {
     }
 
     /**
-     * 
-     * @param g2d
-     * @param text
-     * @param rect
-     * @param font
+     * Draws a string at the center of a rectangle.
+     *
+     * @param g2d   The graphics object.
+     * @param text  The text to draw.
+     * @param rect  The rectangle to center the text in.
+     * @param font  The font for the text.
      */
     private static void drawCenteredString(Graphics2D g2d, String text, Rectangle rect, Font font) {
         FontMetrics metrics = g2d.getFontMetrics(font);
         int x = rect.x + (rect.width - metrics.stringWidth(text)) / 2;
         int y = rect.y + (rect.height - metrics.getHeight()) / 2 + metrics.getAscent();
         g2d.drawString(text, x, y);
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        double[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int scale = 50;
+        String outputFilePath = "output.png";
+        boolean highlightLeadingDiagonal = true;
+
+        MatrixVisualizer.visualizeGraph(matrix, scale, outputFilePath, highlightLeadingDiagonal);
+
+        System.out.println("Graph visualization saved to: " + outputFilePath);
     }
 }
