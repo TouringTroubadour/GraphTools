@@ -21,26 +21,33 @@ Since I am rather inexperienced in Maven and other Dependency Tools, the best wa
 
 ## What's in the box?
 
-There is a brief summary of the classes so far:
+There is a brief summary of Graph Tools different classes:
 
-* MatrixReader
-  * Class containing file reading related methods.
-* MatrixWriter
-  * Class contaiing file writing related methods.
-* MatrixConverter
-  * Class containing conversion related methods.
-* MatrixStats
-  * Class containing Matrix Statistics related methods.
-* MatrixTools
-  * Class containing generic Matrix related methods.
-* MatrixValidator
-  * Class containing Matrix Validation related methods.
-* PerfectMatrices
-  * Class containing "Perfect Matrices" related methods.
-* MatrixVisualizer
-  * Class containing Image Generating methods.
-* MatrixDFS
-  * Class containing DepthFirstSearch and related methods.
+```
+src/
+main/
+  java/
+    clustering/
+      HierarchicalClustering.java
+    conversion/
+      MatrixConversion.java
+    generators/
+      DistanceMatrixGenerator.java
+      PerfectMatrixGenerator.java
+    io/
+      MatrixReader.java
+      MatrixWriter.java
+    statistics/
+      MatrixStatistics.java
+    transformation/
+      MatrixTransformation.java
+    traversal/
+      DepthFirstSearch.java
+    utils/
+      MatrixTools.java
+      MatrixValidator.java
+      MatrixVisualizer.java
+```
 
 ## What's coming down the pipeline?
 
