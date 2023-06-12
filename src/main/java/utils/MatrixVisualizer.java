@@ -17,7 +17,7 @@ import javax.imageio.ImageIO;
 public class MatrixVisualizer {
 
     private MatrixVisualizer() {
-
+        // Private constructor to prevent instantiation
     }
 
     /**

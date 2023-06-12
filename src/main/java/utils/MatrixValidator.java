@@ -2,6 +2,10 @@ package main.java.utils;
 
 public class MatrixValidator {
 
+    private MatrixValidator() {
+        // Private constructor to prevent instantiation
+    }
+
     /**
      * Checks if a matrix is square (number of rows = number of columns).
      *

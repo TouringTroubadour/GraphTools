@@ -3,20 +3,19 @@ package main.java.utils;
 import java.util.Arrays;
 
 /**
- * Matrix Tools
- * A collection of useful methods related to Graphs
+ * MatrixTools
+ * A collection of useful methods related to matrices.
  */
 public class MatrixTools {
 
     private MatrixTools() {
-
+        // Private constructor to prevent instantiation
     }
 
     /**
-     * Ouput Matrix in Console.
-     * Warning, doesn't work very well with large matrices.
+     * Prints the matrix to the console.
      *
-     * @param matrix
+     * @param matrix The matrix to be printed.
      */
     public static void printMatrix(double[][] matrix) {
         int rows = matrix.length;
@@ -31,8 +30,10 @@ public class MatrixTools {
     }
 
     /**
-     * @param matrix
-     * @return
+     * Creates a deep clone of the matrix.
+     *
+     * @param matrix The matrix to be cloned.
+     * @return A deep clone of the input matrix.
      */
     public static double[][] deepClone(double[][] matrix) {
         if (matrix == null) {
@@ -52,8 +53,11 @@ public class MatrixTools {
     }
 
     /**
-     * @param matrix
-     * @return
+     * Calculates the shortest distances between all pairs of vertices using the
+     * Floyd-Warshall algorithm.
+     *
+     * @param matrix The adjacency matrix representing the graph.
+     * @return The matrix of shortest distances.
      */
     public static double[][] getFloydWarshallDistances(double[][] matrix) {
         int size = matrix.length;
@@ -63,8 +67,10 @@ public class MatrixTools {
     }
 
     /**
-     * @param matrix
-     * @return
+     * Initializes the distances matrix with appropriate initial values.
+     *
+     * @param matrix The adjacency matrix representing the graph.
+     * @return The initialized distances matrix.
      */
     private static double[][] initializeDistances(double[][] matrix) {
         int size = matrix.length;
@@ -80,16 +86,20 @@ public class MatrixTools {
     }
 
     /**
-     * @param value
-     * @return
+     * Converts the matrix value to the appropriate distance value.
+     *
+     * @param value The value to be converted.
+     * @return The distance value.
      */
     private static double getDistanceValue(double value) {
         return (value == 0) ? Double.POSITIVE_INFINITY : value;
     }
 
     /**
-     * @param distances
-     * @param size
+     * Applies the Floyd-Warshall algorithm to calculate the shortest distances.
+     *
+     * @param distances The distances matrix.
+     * @param size      The size of the matrix.
      */
     private static void applyFloydWarshallAlgorithm(double[][] distances, int size) {
         for (int k = 0; k < size; k++) {
@@ -104,9 +114,9 @@ public class MatrixTools {
     }
 
     /**
-     * Example usage of MatrixTools class.
+     * Example usage of the MatrixTools class.
      *
-     * @param args the command line arguments
+     * @param args The command line arguments.
      */
     public static void main(String[] args) {
         double[][] matrix = {
@@ -130,5 +140,4 @@ public class MatrixTools {
         System.out.println("\nShortest Distances Matrix:");
         printMatrix(distances);
     }
-
 }

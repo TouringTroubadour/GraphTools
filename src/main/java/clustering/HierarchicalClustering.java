@@ -8,6 +8,10 @@ import java.util.List;
  */
 public class HierarchicalClustering {
 
+    private HierarchicalClustering() {
+        // Private constructor to prevent instantiation
+    }
+
     /**
      * Inner class representing a cluster.
      */
@@ -17,6 +21,7 @@ public class HierarchicalClustering {
 
         /**
          * Constructor for a single-point cluster.
+         * 
          * @param point The initial point in the cluster.
          */
         public Cluster(int point) {
@@ -27,7 +32,8 @@ public class HierarchicalClustering {
 
         /**
          * Constructor for a merged cluster.
-         * @param points The list of points in the cluster.
+         * 
+         * @param points   The list of points in the cluster.
          * @param distance The distance between the points in the cluster.
          */
         public Cluster(List<Integer> points, double distance) {
@@ -46,9 +52,10 @@ public class HierarchicalClustering {
 
     /**
      * Method to calculate the distance between two points using a distance matrix.
+     * 
      * @param distances The distance matrix.
-     * @param i The index of the first point.
-     * @param j The index of the second point.
+     * @param i         The index of the first point.
+     * @param j         The index of the second point.
      * @return The distance between the two points.
      */
     private static double calculateDistance(double[][] distances, int i, int j) {
@@ -57,8 +64,9 @@ public class HierarchicalClustering {
 
     /**
      * Perform hierarchical clustering on the given distance matrix.
+     * 
      * @param distances The distance matrix.
-     * @param k The desired number of clusters.
+     * @param k         The desired number of clusters.
      * @return The list of clusters.
      */
     public static List<Cluster> hierarchicalClustering(double[][] distances, int k) {
@@ -70,7 +78,8 @@ public class HierarchicalClustering {
             clusters.add(new Cluster(i));
         }
 
-        // Perform hierarchical clustering until the desired number of clusters is reached
+        // Perform hierarchical clustering until the desired number of clusters is
+        // reached
         while (clusters.size() > k) {
             int numClusters = clusters.size();
             double minDistance = Double.MAX_VALUE;
@@ -80,7 +89,8 @@ public class HierarchicalClustering {
             // Find the two closest clusters to merge
             for (int i = 0; i < numClusters; i++) {
                 for (int j = i + 1; j < numClusters; j++) {
-                    double distance = calculateDistance(distances, clusters.get(i).getPoints().get(0), clusters.get(j).getPoints().get(0));
+                    double distance = calculateDistance(distances, clusters.get(i).getPoints().get(0),
+                            clusters.get(j).getPoints().get(0));
                     if (distance < minDistance) {
                         minDistance = distance;
                         mergeIndex1 = i;
@@ -109,15 +119,16 @@ public class HierarchicalClustering {
 
     /**
      * Main method to demonstrate the usage of hierarchical clustering.
+     * 
      * @param args The command-line arguments.
      */
     public static void main(String[] args) {
         // Example usage
         double[][] distances = {
-            {0.0, 2.5, 4.2, 3.1},
-            {2.5, 0.0, 1.7, 2.9},
-            {4.2, 1.7, 0.0, 1.8},
-            {3.1, 2.9, 1.8, 0.0}
+                { 0.0, 2.5, 4.2, 3.1 },
+                { 2.5, 0.0, 1.7, 2.9 },
+                { 4.2, 1.7, 0.0, 1.8 },
+                { 3.1, 2.9, 1.8, 0.0 }
         };
 
         int k = 2; // Desired number of clusters
