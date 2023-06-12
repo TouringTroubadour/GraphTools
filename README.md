@@ -1,4 +1,4 @@
-# Graph Tools (0.0.1)
+# Graph Tools (0.0.2)
 
 ## A collection of useful tools for Graphs.
 
