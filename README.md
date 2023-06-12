@@ -31,32 +31,31 @@ To use GraphTools, download the latest Executable Jar file [here](./dist/)
 
 There is a brief summary of Graph Tools different classes:
 
-```
 src/
 main/
   java/
     clustering/
-      HierarchicalClustering.java (Implementation of Heirarchical Clustering)
+      - [HierarchicalClustering.java](./src/main/java/clustering/HierarchicalClustering.java): Implementation of Heirarchical Clustering
     conversion/
-      MatrixConversion.java (Implementation of Matrix Conversion algorithms e.g. Adjacency to Laplaccian or Hessenberg)
+      - [MatrixConversion.java](./src/main/java/conversion/MatrixConversion.java): Implementation of Matrix Conversion algorithms
     generators/
-      DistanceMatrixGenerator.java (Implementation of algorithm for creating randomised Distance Matrices)
-      PerfectMatrixGenerator.java (Implementation of algorithm for creating Fully-Connected Sub-Matrices) 
+      - [DistanceMatrixGenerator.java](./src/main/java/generators/DistanceMatrixGenerator.java): Algorithm for creating randomised Distance Matrices
+      - [PerfectMatrixGenerator.java](./src/main/java/generators/PerfectMatrixGenerator.java): Algorithm for creating Fully-Connected Sub-Matrices
     io/
-      MatrixReader.java (Implementation of reading double[][] matrices from text files)
-      MatrixWriter.java (Implementation of exporting matrices to text or dot files)
+      - [MatrixReader.java](./src/main/java/io/MatrixReader.java): Reading double[][] matrices from text files
+      - [MatrixWriter.java](./src/main/java/io/MatrixWriter.java): Exporting matrices to text or dot files
     statistics/
-      MatrixStatistics.java (Implementation of various methods for gathering statistics on matrices)
+      - [MatrixStatistics.java](./src/main/java/statistics/MatrixStatistics.java): Methods for gathering statistics on matrices
     transformation/
-      MatrixTransformation.java (Implementation of various Matrix transformation methods (not to be confused with Conversions))
+      - [MatrixTransformation.java](./src/main/java/transformation/MatrixTransformation.java): Various Matrix transformation methods
     traversal/
-      DepthFirstSearch.java (Implementation of DepthFirstSearch)
-      PrimMST.java (Implementation of Prim's MST)
+      - [DepthFirstSearch.java](./src/main/java/traversal/DepthFirstSearch.java): DepthFirstSearch implementation
+      - [PrimMST.java](./src/main/java/traversal/PrimMST.java): Prim's MST implementation
     utils/
-      MatrixTools.java (Implementation of various tools relating to Matrices e.g. Console Output, FloydWarshall Distances, etc)
-      MatrixValidator.java (Implementation of various methods for validating Matrices)
-      MatrixVisualizer.java (Implementation of basic Image Visualization of Matrices)
-```
+      - [MatrixTools.java](./src/main/java/utils/MatrixTools.java): Various tools relating to Matrices
+      - [MatrixValidator.java](./src/main/java/utils/MatrixValidator.java): Methods for validating Matrices
+      - [MatrixVisualizer.java](./src/main/java/utils/MatrixVisualizer.java): Basic Image Visualization of Matrices
+
 
 ## What's coming down the pipeline?
 
