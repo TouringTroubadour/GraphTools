@@ -25,7 +25,7 @@ Since I am rather inexperienced in Maven and other Dependency Tools, the best wa
 
 For now, we are focused on primitive double matrices `(double[][])` but in future I would like to expand it to other types.
 
-To use GraphTools, download the Executable Jar file [here](./dist/GraphTools-0.0.1.jar)
+To use GraphTools, download the latest Executable Jar file [here](./dist/)
 
 ## What's in the box?
 
