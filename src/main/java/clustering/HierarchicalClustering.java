@@ -118,6 +118,28 @@ public class HierarchicalClustering {
     }
 
     /**
+     * Performs a tree cut on the hierarchical clustering result to obtain a
+     * specified number of clusters.
+     *
+     * @param clusters The list of clusters from hierarchical clustering.
+     * @param k        The desired number of clusters.
+     * @return The list of cut clusters.
+     */
+    public static List<List<Integer>> treeCut(List<Cluster> clusters, int k) {
+        List<List<Integer>> cutClusters = new ArrayList<>();
+
+        // Sort the clusters by their distances in descending order
+        clusters.sort((c1, c2) -> Double.compare(c2.getDistance(), c1.getDistance()));
+
+        // Perform the tree cut by selecting the top-k clusters
+        for (int i = 0; i < k && i < clusters.size(); i++) {
+            cutClusters.add(clusters.get(i).getPoints());
+        }
+
+        return cutClusters;
+    }
+
+    /**
      * Main method to demonstrate the usage of hierarchical clustering.
      * 
      * @param args The command-line arguments.
@@ -140,6 +162,14 @@ public class HierarchicalClustering {
             Cluster cluster = result.get(i);
             System.out.println("Cluster " + (i + 1) + ": " + cluster.getPoints());
             System.out.println("Distance: " + cluster.getDistance());
+        }
+
+        List<List<Integer>> cutResult = treeCut(result, k);
+
+        // Print the resulting cut clusters
+        for (int i = 0; i < cutResult.size(); i++) {
+            List<Integer> cluster = cutResult.get(i);
+            System.out.println("Cluster " + (i + 1) + ": " + cluster);
         }
     }
 }
