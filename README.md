@@ -17,9 +17,15 @@ If I do end up surrendering and using External Libraries, I will make a list of 
 
 ## How to use
 
+### Preface
+
 Since I am rather inexperienced in Maven and other Dependency Tools, the best way for you to use these tools at the moment is to simply clone the repository, and use what you desire. As I said before it's often easier to not reinvent the wheel so if any of the code here is helpful to you please feel free to make whatever modifications you like! If I did provide you with something useful and/or you took it a step further to improve it I would love to know more about it!
 
-For now, we are focused on primitive double matrices `(double[][])` but in future I would like to expand it to other types. 
+### Using GraphTools
+
+For now, we are focused on primitive double matrices `(double[][])` but in future I would like to expand it to other types.
+
+To use GraphTools, download the Executable Jar file [here](./dist/GraphTools-0.0.1.jar)
 
 ## What's in the box?
 
