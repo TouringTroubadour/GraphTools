@@ -31,30 +31,22 @@ To use GraphTools, download the latest Executable Jar file [here](./dist/)
 
 There is a brief summary of Graph Tools different classes:
 
-src/
-main/
-  java/
-    clustering/
-      - [HierarchicalClustering.java](./src/main/java/clustering/HierarchicalClustering.java): Implementation of Heirarchical Clustering
-    conversion/
-      - [MatrixConversion.java](./src/main/java/conversion/MatrixConversion.java): Implementation of Matrix Conversion algorithms
-    generators/
-      - [DistanceMatrixGenerator.java](./src/main/java/generators/DistanceMatrixGenerator.java): Algorithm for creating randomised Distance Matrices
-      - [PerfectMatrixGenerator.java](./src/main/java/generators/PerfectMatrixGenerator.java): Algorithm for creating Fully-Connected Sub-Matrices
-    io/
-      - [MatrixReader.java](./src/main/java/io/MatrixReader.java): Reading double[][] matrices from text files
-      - [MatrixWriter.java](./src/main/java/io/MatrixWriter.java): Exporting matrices to text or dot files
-    statistics/
-      - [MatrixStatistics.java](./src/main/java/statistics/MatrixStatistics.java): Methods for gathering statistics on matrices
-    transformation/
-      - [MatrixTransformation.java](./src/main/java/transformation/MatrixTransformation.java): Various Matrix transformation methods
-    traversal/
-      - [DepthFirstSearch.java](./src/main/java/traversal/DepthFirstSearch.java): DepthFirstSearch implementation
-      - [PrimMST.java](./src/main/java/traversal/PrimMST.java): Prim's MST implementation
-    utils/
-      - [MatrixTools.java](./src/main/java/utils/MatrixTools.java): Various tools relating to Matrices
-      - [MatrixValidator.java](./src/main/java/utils/MatrixValidator.java): Methods for validating Matrices
-      - [MatrixVisualizer.java](./src/main/java/utils/MatrixVisualizer.java): Basic Image Visualization of Matrices
+| Directory | Class | Description |
+| --- | --- | --- |
+| clustering | [HierarchicalClustering.java](src/main/java/clustering/HierarchicalClustering.java) | Implementation of Hierarchical Clustering |
+| conversion | [MatrixConversion.java](src/main/java/conversion/MatrixConversion.java) | Implementation of Matrix Conversion algorithms |
+| generators | [DistanceMatrixGenerator.java](src/main/java/generators/DistanceMatrixGenerator.java) | Algorithm for creating randomised Distance Matrices |
+| generators | [PerfectMatrixGenerator.java](src/main/java/generators/PerfectMatrixGenerator.java) | Algorithm for creating Fully-Connected Sub-Matrices |
+| io | [MatrixReader.java](src/main/java/io/MatrixReader.java) | Implementation of reading double[][] matrices from text files |
+| io | [MatrixWriter.java](src/main/java/io/MatrixWriter.java) | Implementation of exporting matrices to text or dot files |
+| statistics | [MatrixStatistics.java](src/main/java/statistics/MatrixStatistics.java) | Implementation of various methods for gathering statistics on matrices |
+| transformation | [MatrixTransformation.java](src/main/java/transformation/MatrixTransformation.java) | Implementation of various Matrix transformation methods |
+| traversal | [DepthFirstSearch.java](src/main/java/traversal/DepthFirstSearch.java) | Implementation of Depth First Search |
+| traversal | [PrimMST.java](src/main/java/traversal/PrimMST.java) | Implementation of Prim's Minimum Spanning Tree |
+| utils | [MatrixTools.java](src/main/java/utils/MatrixTools.java) | Implementation of various tools relating to Matrices |
+| utils | [MatrixValidator.java](src/main/java/utils/MatrixValidator.java) | Implementation of various methods for validating Matrices |
+| utils | [MatrixVisualizer.java](src/main/java/utils/MatrixVisualizer.java) | Implementation of basic Image Visualization of Matrices |
+
 
 
 ## What's coming down the pipeline?
