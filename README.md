@@ -51,4 +51,4 @@ There is a brief summary of Graph Tools different classes:
 
 ## What's coming down the pipeline?
 
-I aim to update this repository further in future as I continue to work with Matricies in my current related work. I am also aiming to package this into a Jar file at some point for convenience. I will avoid including a TO-DO list here for the time being, but I am almost certain there is much more to be added. 
+I aim to update this repository further in future as I continue to work with Matricies in my current related work. I will avoid including a TO-DO list here for the time being, but I am almost certain there is much more to be added. 
