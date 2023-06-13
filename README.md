@@ -19,7 +19,7 @@ If I do end up surrendering and using External Libraries, I will make a list of 
 
 ### Preface
 
-Since I am rather inexperienced in Maven and other Dependency Tools, the best way for you to use these tools at the moment is to simply clone the repository, and use what you desire. As I said before it's often easier to not reinvent the wheel so if any of the code here is helpful to you please feel free to make whatever modifications you like! If I did provide you with something useful and/or you took it a step further to improve it I would love to know more about it!
+Since I am rather inexperienced in Maven and other Dependency Tools, the best way for you to use these tools at the moment is to simply either clone the repository or download the latest Executable Jar file [here](./dist/). As I said before it's often easier to not reinvent the wheel so if any of the code here is helpful to you please feel free to make whatever modifications you like! If I did provide you with something useful and/or you took it a step further to improve it I would love to know more about it!
 
 ### Using GraphTools
 
